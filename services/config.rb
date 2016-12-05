@@ -3,12 +3,11 @@
 ## This config.rb file exists to create and maintain services not related to compute.
 ## for example, a VPC might be maintained using:
 ##
-## coreo_aws_vpc_vpc "my-vpc" do
-##   action :sustain
-##   cidr "12.0.0.0/16"
-##   internet_gateway true
-## end
-##
+coreo_aws_vpc_vpc "${VPC_NAME}" do
+  action :sustain
+  cidr "12.0.0.0/16"
+  internet_gateway true
+end
 
 coreo_aws_ec2_securityGroups "${JENKINS_NAME}" do
   action :sustain
@@ -84,6 +83,19 @@ coreo_aws_iam_policy "${JENKINS_NAME}-s3" do
   ]
 }
 EOH
+end
+
+coreo_aws_vpc_routetable "${JENKINS_NAME}-routetable" do
+  action :sustain
+  vpc "${VPC_NAME}"
+  number_of_tables 3
+end
+
+coreo_aws_vpc_subnet "${PRIVATE_SUBNET_NAME}" do
+  action :sustain
+  vpc "${VPC_NAME}"
+  percent_of_vpc_allocated 25
+  route_table "${JENKINS_NAME}-routetable"
 end
 
 coreo_aws_iam_policy "${JENKINS_NAME}-yum" do
