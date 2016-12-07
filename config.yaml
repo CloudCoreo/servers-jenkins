@@ -9,19 +9,19 @@
 
 variables:
   BACKUP_BUCKET:
-    default: 
+    default:
     description:
     overrides:
     required: true
     type:
   YUM_REPO_BUCKET:
-    default: 
+    default:
     description:
     overrides:
     required: true
     type:
   BACKUP_BUCKET_REGION:
-    default: 
+    default:
     description:
     overrides:
     required: true
@@ -56,7 +56,7 @@ variables:
     type: array
   JENKINS_KEYPAIR:
     description: the name of the keypair to launch jenkins with
-    require: true
+    required: true
   JENKINS_NAME:
     default: jenkins
     description: the name of the jenkins server
@@ -72,8 +72,8 @@ variables:
     required: true
     type:
   REGION:
-    default: 
-    description: 
+    default:
+    description:
     overrides:
     required: true
     type:
@@ -83,5 +83,3 @@ variables:
     overrides:
     required: true
     type:
-
-                  
