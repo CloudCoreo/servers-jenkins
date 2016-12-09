@@ -17,11 +17,17 @@ Jenkins Server
 ### `BACKUP_BUCKET`:
   * description: 
 
+### `YUM_REPO_BUCKET`:
+  * description: 
+
 ### `BACKUP_BUCKET_REGION`:
   * description: 
 
 ### `JENKINS_INGRESS_CIDRS`:
   * description: 
+
+### `JENKINS_KEYPAIR`:
+  * description: the name of the keypair to launch jenkins with
 
 ### `PRIVATE_SUBNET_NAME`:
   * description: 
@@ -72,8 +78,7 @@ Jenkins Server
 
 ## Optional variables with no default
 
-### `JENKINS_KEYPAIR`:
-  * description: the name of the keypair to launch jenkins with
+**None**
 
 ## Tags
 1. Servers
