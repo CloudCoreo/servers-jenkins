@@ -1,0 +1,1 @@
+![icon](https://raw.githubusercontent.com/CloudCoreo/servers-jenkins/master/images/icon.png "icon")
