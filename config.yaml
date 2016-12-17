@@ -21,7 +21,7 @@ variables:
     required: true
     type:
   BACKUP_BUCKET_REGION:
-    default:
+    default: "PLAN::region"
     description:
     overrides:
     required: true
