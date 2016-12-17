@@ -10,7 +10,7 @@ coreo_aws_vpc_vpc "${VPC_NAME}" do
   internet_gateway true
 end
 
-coreo_aws_vpc_routetable "${JENKINS_NAME}-routetable" do
+coreo_aws_vpc_routetable "${PUBLIC_ROUTE_NAME}" do
   action :find
   vpc "${VPC_NAME}"
 end
@@ -20,19 +20,6 @@ coreo_aws_vpc_subnet "${PRIVATE_SUBNET_NAME}" do
   route_table "${PUBLIC_ROUTE_NAME}"
   vpc "${VPC_NAME}"
 end
-
-# coreo_aws_vpc_routetable "${JENKINS_NAME}-routetable" do
-#   action :sustain
-#   vpc "${VPC_NAME}"
-#   number_of_tables 3
-# end
-
-# coreo_aws_vpc_subnet "${PRIVATE_SUBNET_NAME}" do
-#   action :sustain
-#   vpc "${VPC_NAME}"
-#   percent_of_vpc_allocated 25
-#   route_table "${JENKINS_NAME}-routetable"
-# end
 
 coreo_aws_ec2_securityGroups "${JENKINS_NAME}" do
   action :sustain
