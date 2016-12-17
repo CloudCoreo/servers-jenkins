@@ -66,6 +66,12 @@ variables:
     overrides: null
     required: true
     type: string
+  PUBLIC_ROUTE_NAME:
+    default: test-public-route
+    description: null
+    overrides: null
+    required: true
+    type: string
   VPC_NAME:
     default: test-vpc
     description:
