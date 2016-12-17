@@ -36,11 +36,6 @@ variables:
     default: dev
     description: just a way to namespace the backups
     required: true
-  JENKINS_AMI:
-    default: ami-76817c1e
-    description: Amazon Linux AMI 2014.03.2 (HVM)
-    overrides:
-    required: true
   JENKINS_INGRESS_CIDRS:
     default:
     description:
@@ -66,12 +61,6 @@ variables:
     description: the size of the server to launch
     required: true
   PRIVATE_SUBNET_NAME:
-    default:
-    description:
-    overrides:
-    required: true
-    type:
-  REGION:
     default:
     description:
     overrides:

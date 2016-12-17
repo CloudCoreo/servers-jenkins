@@ -55,8 +55,8 @@ coreo_aws_iam_policy "${JENKINS_NAME}-s3" do
     {
       "Effect": "Allow",
       "Resource": [
-          "arn:aws:s3:::${BACKUP_BUCKET}/${REGION}/jenkins/${ENV}/${JENKINS_NAME}",
-          "arn:aws:s3:::${BACKUP_BUCKET}/${REGION}/jenkins/${ENV}/${JENKINS_NAME}/*"
+          "arn:aws:s3:::${BACKUP_BUCKET}/${BACKUP_BUCKET_REGION}/jenkins/${ENV}/${JENKINS_NAME}",
+          "arn:aws:s3:::${BACKUP_BUCKET}/${BACKUP_BUCKET_REGION}/jenkins/${ENV}/${JENKINS_NAME}/*"
       ],
       "Action": [ 
           "s3:*"
@@ -125,7 +125,7 @@ end
 
 coreo_aws_ec2_instance "${JENKINS_NAME}" do
   action :define
-  image_id "${JENKINS_AMI}"
+  image_id "${AWS_LINUX_AMI}"
   size "${JENKINS_SIZE}"
   security_groups ["${JENKINS_NAME}"]
   role "${JENKINS_NAME}"
