@@ -37,7 +37,7 @@ variables:
     description: just a way to namespace the backups
     required: true
   JENKINS_INGRESS_CIDRS:
-    default:
+    default: 0.0.0.0/0
     description:
     overrides:
     required: true
