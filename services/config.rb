@@ -3,6 +3,7 @@
 ## This config.rb file exists to create and maintain services not related to compute.
 ## for example, a VPC might be maintained using:
 ##
+
 coreo_aws_vpc_vpc "${VPC_NAME}" do
   action :find
   cidr "${VPC_CIDR}"

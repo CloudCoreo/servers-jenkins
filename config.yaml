@@ -61,14 +61,20 @@ variables:
     description: the size of the server to launch
     required: true
   PRIVATE_SUBNET_NAME:
-    default:
-    description:
-    overrides:
+    default: test-public-subnet
+    description: The name of the public subnet you want to create your server in
+    overrides: null
     required: true
-    type:
+    type: string
   VPC_NAME:
-    default:
+    default: test-vpc
     description:
     overrides:
     required: true
-    type:
+    type: string
+  VPC_CIDR:
+    default: 10.11.0.0/16
+    description: The CIDR to match to locate the VPC that this server is to be created in
+    overrides: null
+    required: true
+    type: string
