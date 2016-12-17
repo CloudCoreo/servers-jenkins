@@ -27,12 +27,12 @@ end
 #   number_of_tables 3
 # end
 
-coreo_aws_vpc_subnet "${PRIVATE_SUBNET_NAME}" do
-  action :sustain
-  vpc "${VPC_NAME}"
-  percent_of_vpc_allocated 25
-  route_table "${JENKINS_NAME}-routetable"
-end
+# coreo_aws_vpc_subnet "${PRIVATE_SUBNET_NAME}" do
+#   action :sustain
+#   vpc "${VPC_NAME}"
+#   percent_of_vpc_allocated 25
+#   route_table "${JENKINS_NAME}-routetable"
+# end
 
 coreo_aws_ec2_securityGroups "${JENKINS_NAME}" do
   action :sustain
