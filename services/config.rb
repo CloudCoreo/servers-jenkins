@@ -139,8 +139,8 @@ end
 
 coreo_aws_ec2_autoscaling "${JENKINS_NAME}" do
   action :sustain 
-  minimum 1
-  maximum 1
+  minimum "${AUTOSCALING_GROUP_MAXIMUM}"
+  maximum "${AUTOSCALING_GROUP_MINIMUM}"
   server_definition "${JENKINS_NAME}"
   subnet "${PRIVATE_SUBNET_NAME}"
 end
