@@ -4,7 +4,7 @@ server-jenkins
 
 
 ## Description
-Jenkins Server
+This composite creates a simple Jenkins server instance via an Autoscaling Group
 
 
 ## Hierarchy
